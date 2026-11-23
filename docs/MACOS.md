@@ -79,10 +79,12 @@ Ağırlıkları bellek eşlemeli (`--mmap`) olarak RAM'de tutar, metin kodlayıc
 | Mod | Koşu | Boyut | Kare | Metin Kodlama | 6 Adım Örnekleme | Video + Ses VAE | Toplam (`generate_video`) | En Yüksek Bellek (`/usr/bin/time -l`) |
 |---|---|---|---:|---:|---:|---:|---:|---|
 | **Mod A (Varsayılan)** | `ornek_istem_R0` | 640×384 | 56 | 15,47 sn | 118,21 sn | 12,10 + 2,24 sn | **148,03 sn** (2 dk 28 sn) | 31,20 GiB max RSS · 8,87 GiB aktif · 0 swap |
+| **Mod B (48 GB `TAM_METAL=1`)** | `ornek_istem_R0` | 640×384 | 56 | **4,16 sn** | **85,49 sn** (`13.82s/it`) | 7,64 + 1,52 sn | **98,84 sn** (1 dk 39 sn) | 30,0 GB ağırlık `MTL0`'da · 0,74 GiB CPU RSS · 0,99 GiB aktif CPU · 0 swap |
 | **Mod A (Varsayılan)** | 2B dans | 640×384 | 56 | 63,74 sn | 99,82 sn | 7,45 + 1,43 sn | **172,47 sn** (2 dk 52 sn) | 28,56 GiB max RSS · 8,93 GiB aktif · 0 swap |
 | **Mod B (48 GB `TAM_METAL=1`)** | 2B dans (aynı istem) | 640×384 | 56 | **4,38 sn** | **91,23 sn** | 7,86 + 1,56 sn | **105,05 sn** (1 dk 45 sn) | 30,0 GB ağırlık `MTL0`'da · 0,81 GiB CPU RSS · 1,04 GiB aktif CPU · 0 swap |
 | **Mod A (Varsayılan)** | 2B dans | 640×384 | 209 | 68,31 sn | 601,80 sn | 26,59 + 4,55 sn | **701,34 sn** (11 dk 41 sn) | 30,14 GiB max RSS · 9,31 GiB aktif · 0 swap |
 | **Mod A (Varsayılan)** | Robot sahnesi | 640×384 | 209 | 75,81 sn | 595,54 sn | 27,62 + 4,70 sn | **703,76 sn** (11 dk 44 sn) | 31,62 GiB max RSS · 9,32 GiB aktif · 0 swap |
+| **Mod B (48 GB `TAM_METAL=1`)** | `ornek_istem_R0` | 640×384 | 209 | **3,24 sn** | **602,47 sn** (`97.71s/it`) | 29,93 + 4,61 sn | **640,33 sn** (10 dk 40 sn) | 30,0 GB ağırlık `MTL0`'da · 2,36 GiB CPU RSS · 2,56 GiB aktif CPU · 0 swap |
 | **Mod B (48 GB `TAM_METAL=1`)** | Robot (yüksek çöz.) | 960×544 | 56 | 4,33 sn | 247,92 sn | 19,78 + 1,53 sn | **273,62 sn** (4 dk 34 sn) | 30,0 GB ağırlık `MTL0`'da · 1,43 GiB CPU RSS · 1,69 GiB aktif CPU · 0 swap |
 | **Mod B (`budget=0.5`)** | Robot (768p) | 1344×768 | 56 | 4,35 sn | 736,24 sn | 34,20 + 1,55 sn | **776,44 sn** (12 dk 56 sn) | 30,0 GB ağırlık `MTL0`'da · 2,60 GiB CPU RSS · 2,86 GiB aktif CPU · 0 swap |
 
